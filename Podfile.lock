@@ -1,0 +1,16 @@
+PODS:
+  - InsiteoSDK (3.6.3)
+
+DEPENDENCIES:
+  - InsiteoSDK (from `https://raw.github.com/Insiteo/ios-v3/master/InsiteoSDK.podspec`)
+
+EXTERNAL SOURCES:
+  InsiteoSDK:
+    :podspec: https://raw.github.com/Insiteo/ios-v3/master/InsiteoSDK.podspec
+
+SPEC CHECKSUMS:
+  InsiteoSDK: c8748cb376e7fb354f78b05f744e02c8fb4c0cf4
+
+PODFILE CHECKSUM: 4410ee4ca8ea2fc262ec8f1a9c3ce69243f29c7d
+
+COCOAPODS: 1.2.1

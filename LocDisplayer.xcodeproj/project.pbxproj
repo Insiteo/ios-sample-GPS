@@ -1,0 +1,393 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		5C2E55691F6A8CD500024451 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C2E55681F6A8CD500024451 /* AppDelegate.swift */; };
+		5C2E556B1F6A8CD500024451 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C2E556A1F6A8CD500024451 /* ViewController.swift */; };
+		5C2E556E1F6A8CD500024451 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5C2E556C1F6A8CD500024451 /* Main.storyboard */; };
+		5C2E55701F6A8CD500024451 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5C2E556F1F6A8CD500024451 /* Assets.xcassets */; };
+		5C2E55731F6A8CD500024451 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5C2E55711F6A8CD500024451 /* LaunchScreen.storyboard */; };
+		F33CC1EA35BA0EB5587EC453 /* Pods_LocDisplayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 159B78B175F347F0D88B68EB /* Pods_LocDisplayer.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		159B78B175F347F0D88B68EB /* Pods_LocDisplayer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LocDisplayer.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		1B954FFE59198AA4620F43DA /* Pods-LocDisplayer.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LocDisplayer.debug.xcconfig"; path = "Pods/Target Support Files/Pods-LocDisplayer/Pods-LocDisplayer.debug.xcconfig"; sourceTree = "<group>"; };
+		5C2E55651F6A8CD500024451 /* LocDisplayer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LocDisplayer.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		5C2E55681F6A8CD500024451 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		5C2E556A1F6A8CD500024451 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		5C2E556D1F6A8CD500024451 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		5C2E556F1F6A8CD500024451 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		5C2E55721F6A8CD500024451 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		5C2E55741F6A8CD500024451 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5C2E557A1F6A8E2000024451 /* LocDisplayer-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "LocDisplayer-Bridging-Header.h"; sourceTree = "<group>"; };
+		EF209A417EB9580AF224B6BD /* Pods-LocDisplayer.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LocDisplayer.release.xcconfig"; path = "Pods/Target Support Files/Pods-LocDisplayer/Pods-LocDisplayer.release.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		5C2E55621F6A8CD500024451 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F33CC1EA35BA0EB5587EC453 /* Pods_LocDisplayer.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		5C2E555C1F6A8CD500024451 = {
+			isa = PBXGroup;
+			children = (
+				5C2E55671F6A8CD500024451 /* LocDisplayer */,
+				5C2E55661F6A8CD500024451 /* Products */,
+				BD790677E2969A59B6EF619D /* Pods */,
+				7ACAFAFF7B051876668CF2E9 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		5C2E55661F6A8CD500024451 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				5C2E55651F6A8CD500024451 /* LocDisplayer.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		5C2E55671F6A8CD500024451 /* LocDisplayer */ = {
+			isa = PBXGroup;
+			children = (
+				5C2E55681F6A8CD500024451 /* AppDelegate.swift */,
+				5C2E556A1F6A8CD500024451 /* ViewController.swift */,
+				5C2E556C1F6A8CD500024451 /* Main.storyboard */,
+				5C2E556F1F6A8CD500024451 /* Assets.xcassets */,
+				5C2E55711F6A8CD500024451 /* LaunchScreen.storyboard */,
+				5C2E55741F6A8CD500024451 /* Info.plist */,
+				5C2E557A1F6A8E2000024451 /* LocDisplayer-Bridging-Header.h */,
+			);
+			path = LocDisplayer;
+			sourceTree = "<group>";
+		};
+		7ACAFAFF7B051876668CF2E9 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				159B78B175F347F0D88B68EB /* Pods_LocDisplayer.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		BD790677E2969A59B6EF619D /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				1B954FFE59198AA4620F43DA /* Pods-LocDisplayer.debug.xcconfig */,
+				EF209A417EB9580AF224B6BD /* Pods-LocDisplayer.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		5C2E55641F6A8CD500024451 /* LocDisplayer */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5C2E55771F6A8CD500024451 /* Build configuration list for PBXNativeTarget "LocDisplayer" */;
+			buildPhases = (
+				D033A250995C8429FFC91A51 /* [CP] Check Pods Manifest.lock */,
+				5C2E55611F6A8CD500024451 /* Sources */,
+				5C2E55621F6A8CD500024451 /* Frameworks */,
+				5C2E55631F6A8CD500024451 /* Resources */,
+				8602CF9F074FFE6FB4BA22A2 /* [CP] Embed Pods Frameworks */,
+				C9D92620127ED83704923A6B /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = LocDisplayer;
+			productName = LocDisplayer;
+			productReference = 5C2E55651F6A8CD500024451 /* LocDisplayer.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		5C2E555D1F6A8CD500024451 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0830;
+				LastUpgradeCheck = 0830;
+				ORGANIZATIONNAME = "Florian Lecoeuche";
+				TargetAttributes = {
+					5C2E55641F6A8CD500024451 = {
+						CreatedOnToolsVersion = 8.3.3;
+						DevelopmentTeam = AQ8QYN9MF5;
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = 5C2E55601F6A8CD500024451 /* Build configuration list for PBXProject "LocDisplayer" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 5C2E555C1F6A8CD500024451;
+			productRefGroup = 5C2E55661F6A8CD500024451 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				5C2E55641F6A8CD500024451 /* LocDisplayer */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		5C2E55631F6A8CD500024451 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5C2E55731F6A8CD500024451 /* LaunchScreen.storyboard in Resources */,
+				5C2E55701F6A8CD500024451 /* Assets.xcassets in Resources */,
+				5C2E556E1F6A8CD500024451 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		8602CF9F074FFE6FB4BA22A2 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-LocDisplayer/Pods-LocDisplayer-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C9D92620127ED83704923A6B /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-LocDisplayer/Pods-LocDisplayer-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D033A250995C8429FFC91A51 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		5C2E55611F6A8CD500024451 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5C2E556B1F6A8CD500024451 /* ViewController.swift in Sources */,
+				5C2E55691F6A8CD500024451 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		5C2E556C1F6A8CD500024451 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				5C2E556D1F6A8CD500024451 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		5C2E55711F6A8CD500024451 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				5C2E55721F6A8CD500024451 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		5C2E55751F6A8CD500024451 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		5C2E55761F6A8CD500024451 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		5C2E55781F6A8CD500024451 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1B954FFE59198AA4620F43DA /* Pods-LocDisplayer.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = AQ8QYN9MF5;
+				INFOPLIST_FILE = LocDisplayer/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.florianlecoeuche.LocDisplayer;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "$(PROJECT_DIR)/$(PROJECT_NAME)/$(PROJECT_NAME)-Bridging-Header.h";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		5C2E55791F6A8CD500024451 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = EF209A417EB9580AF224B6BD /* Pods-LocDisplayer.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = AQ8QYN9MF5;
+				INFOPLIST_FILE = LocDisplayer/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.florianlecoeuche.LocDisplayer;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "$(PROJECT_DIR)/$(PROJECT_NAME)/$(PROJECT_NAME)-Bridging-Header.h";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		5C2E55601F6A8CD500024451 /* Build configuration list for PBXProject "LocDisplayer" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5C2E55751F6A8CD500024451 /* Debug */,
+				5C2E55761F6A8CD500024451 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		5C2E55771F6A8CD500024451 /* Build configuration list for PBXNativeTarget "LocDisplayer" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5C2E55781F6A8CD500024451 /* Debug */,
+				5C2E55791F6A8CD500024451 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 5C2E555D1F6A8CD500024451 /* Project object */;
+}
