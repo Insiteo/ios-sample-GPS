@@ -3,11 +3,15 @@
 <plist version="1.0">
 <dict>
 	<key>ISApiKey</key>
-	<string>Enter your API key here</string>
+	<string>Insert your Api Key</string>
 	<key>ISEServerType</key>
-	<string>Enter your server type here</string>
-	<key>ISEServerURL</key>
-	<string>Enter your server URL here</string>
+	<string>Insert the ISEServerType</string>
+	<key>ISServerURL</key>
+	<string>Insert the ISServerURL</string>
+	<key>ISSite</key>
+	<real>0</real>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>This app needs your location to locate you inside buildings</string>
 	<key>NSBluetoothPeripheralUsageDescription</key>
 	<string>App uses Bluetooth to provide you with high accuracy indoor location</string>
 	<key>ISELocationFlag</key>

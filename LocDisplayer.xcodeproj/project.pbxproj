@@ -10,7 +10,6 @@
 		5C2E55691F6A8CD500024451 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C2E55681F6A8CD500024451 /* AppDelegate.swift */; };
 		5C2E556B1F6A8CD500024451 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C2E556A1F6A8CD500024451 /* ViewController.swift */; };
 		5C2E556E1F6A8CD500024451 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5C2E556C1F6A8CD500024451 /* Main.storyboard */; };
-		5C2E55701F6A8CD500024451 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5C2E556F1F6A8CD500024451 /* Assets.xcassets */; };
 		5C2E55731F6A8CD500024451 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5C2E55711F6A8CD500024451 /* LaunchScreen.storyboard */; };
 		F33CC1EA35BA0EB5587EC453 /* Pods_LocDisplayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 159B78B175F347F0D88B68EB /* Pods_LocDisplayer.framework */; };
 /* End PBXBuildFile section */
@@ -22,7 +21,6 @@
 		5C2E55681F6A8CD500024451 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5C2E556A1F6A8CD500024451 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		5C2E556D1F6A8CD500024451 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		5C2E556F1F6A8CD500024451 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5C2E55721F6A8CD500024451 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		5C2E55741F6A8CD500024451 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5C2E557A1F6A8E2000024451 /* LocDisplayer-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "LocDisplayer-Bridging-Header.h"; sourceTree = "<group>"; };
@@ -65,7 +63,6 @@
 				5C2E55681F6A8CD500024451 /* AppDelegate.swift */,
 				5C2E556A1F6A8CD500024451 /* ViewController.swift */,
 				5C2E556C1F6A8CD500024451 /* Main.storyboard */,
-				5C2E556F1F6A8CD500024451 /* Assets.xcassets */,
 				5C2E55711F6A8CD500024451 /* LaunchScreen.storyboard */,
 				5C2E55741F6A8CD500024451 /* Info.plist */,
 				5C2E557A1F6A8E2000024451 /* LocDisplayer-Bridging-Header.h */,
@@ -154,7 +151,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				5C2E55731F6A8CD500024451 /* LaunchScreen.storyboard in Resources */,
-				5C2E55701F6A8CD500024451 /* Assets.xcassets in Resources */,
 				5C2E556E1F6A8CD500024451 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

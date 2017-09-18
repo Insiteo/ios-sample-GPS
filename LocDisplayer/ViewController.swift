@@ -57,11 +57,39 @@ class ViewController: UIViewController {
     }
     
     func startInsiteoSDK() {
-        let site : ISUserSite = Insiteo.currentUser().getSiteWithSiteId(Int32(559))
+        
+        var myDict: NSDictionary?
+        
+        if let path = Bundle.main.path(forResource: "Info", ofType: "plist") {
+            myDict = NSDictionary(contentsOfFile: path)
+        }
+        
+        guard let siteId : Int32 = myDict?.value(forKey: "ISSite") as? Int32 else {
+            print("No value found for key ISSite in the .plist file.")
+            return
+        }
+        
+        let site : ISUserSite = Insiteo.currentUser().getSiteWithSiteId(siteId)
         Insiteo.sharedInstance().start(with: site, andStartHandler: { (error: ISError?, newPackages:[Any]?) in
             
+            guard var wantedPackages = newPackages as? [ISPackage] else {
+                print("Error with packages")
+                return
+            }
+            
+            // Remove useless packages
+            for (index, package) in wantedPackages.enumerated().reversed() {
+
+                if package.packageType != ISEPackageType.location
+                    && package.packageType != ISEPackageType.mapData {
+
+                    wantedPackages.remove(at: index)
+
+                }
+            }
+            
             if error == nil {
-                Insiteo.sharedInstance().updateCurrentSite(withWantedPackages: newPackages, andUpdateHandler: { (err: ISError?) in
+                Insiteo.sharedInstance().updateCurrentSite(withWantedPackages: wantedPackages, andUpdateHandler: { (err: ISError?) in
                     
                     if let errorMessage = err?.message {
                         print("Update site error : \(errorMessage)")
@@ -81,17 +109,8 @@ class ViewController: UIViewController {
                     case 1:
                         package = "mapdata"
                         break
-                    case 2:
-                        package = "tiles"
-                        break
                     case 3:
                         package = "localisation"
-                        break
-                    case 4:
-                        package = "itinerary"
-                        break
-                    case 10:
-                        package = "extras"
                         break
                     case 0:
                         break
@@ -116,7 +135,8 @@ class ViewController: UIViewController {
     
     func startLocalisation() {
         
-        if Insiteo.currentSite().hasPackage(ISEPackageType.location) {
+        if Insiteo.currentSite().hasPackage(ISEPackageType.location)
+        && Insiteo.currentSite().hasPackage(ISEPackageType.mapData){
             ISLocationProvider.sharedInstance().start(with: self)
         }
         
