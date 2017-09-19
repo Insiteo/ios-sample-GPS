@@ -10,12 +10,15 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    @IBOutlet weak var currentSiteLabel: UILabel!
     @IBOutlet weak var longitudeLabel: UILabel!
     @IBOutlet weak var latitudeLabel: UILabel!
+    @IBOutlet weak var siteIdTextField: UITextField!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.hideKeyboardWhenTappedAround()
         self.initInsiteoSDK()
     }
     
@@ -27,6 +30,9 @@ class ViewController: UIViewController {
     // MARK: - Insiteo SDK Init/Start
     
     func initInsiteoSDK() {
+        
+        print("Init InsiteoSDK - Start")
+        
         Insiteo.sharedInstance().launch(initializeHandler: { (error: ISError?, suggestedSite: ISUserSite?, fromLocalCache: Bool) in
             
             if let errorMessage = error?.message {
@@ -54,9 +60,13 @@ class ViewController: UIViewController {
         }, andUpdateProgressHandler: { (packageType: ISEPackageType, dowload: Bool, progress: Int32, total: Int32) in
             
         })
+        
+        print("Init InsiteoSDK - End")
     }
     
     func startInsiteoSDK() {
+        
+        print("Start InstieoSDK - Start")
         
         var myDict: NSDictionary?
         
@@ -68,6 +78,8 @@ class ViewController: UIViewController {
             print("No value found for key ISSite in the .plist file.")
             return
         }
+        
+        currentSiteLabel.text = siteId.description
         
         let site : ISUserSite = Insiteo.currentUser().getSiteWithSiteId(siteId)
         Insiteo.sharedInstance().start(with: site, andStartHandler: { (error: ISError?, newPackages:[Any]?) in
@@ -129,6 +141,54 @@ class ViewController: UIViewController {
             }
             
         })
+        
+        print("Start InstieoSDK - End")
+        
+    }
+    
+    // Change site
+    
+    func changeSite(with newSite : Int32) {
+        
+        print("Changing site - Start")
+        
+        let site : ISUserSite = Insiteo.currentUser().getSiteWithSiteId(newSite)
+        Insiteo.sharedInstance().startAndUpdate(with:site, andStartHandler: { (error: ISError?, tab: [Any]?) in
+            
+            if let errorMessage = error?.message {
+                print("Start handler error : \(errorMessage)")
+            }
+            
+        }, andUpdateHandler: { (error: ISError?) in
+            
+            if let errorMessage = error?.message {
+                print("Update handler error : \(errorMessage)")
+            }
+            
+        }, andUpdateProgressHandler: { (packageType: ISEPackageType, dowload: Bool, progress: Int32, total: Int32) in
+            let totalProgress: Float = (Float(progress) / Float(total)) * 100
+            
+            var package: String = String();
+            
+            switch (packageType.rawValue) {
+            case 1:
+                package = "mapdata"
+                break
+            case 3:
+                package = "localisation"
+                break
+            case 0:
+                break
+            default:
+                package = "temporaire"
+                break
+            }
+            print("Downloading package : \(package) - \(totalProgress)%")
+        })
+        
+        currentSiteLabel.text = newSite.description
+        
+        print("Changing site - End")
     }
     
     // MARK : Localisation
@@ -144,6 +204,19 @@ class ViewController: UIViewController {
     
     func stopLocalisation() {
         ISLocationProvider.sharedInstance().stopLocation()
+    }
+    
+    // MARK : IBAction
+    
+    @IBAction func changeSitePressed(_ sender: Any) {
+        self.becomeFirstResponder()
+        
+        if let siteId = siteIdTextField.text {
+            print(siteId)
+            changeSite(with: Int32(siteId)!)
+        }
+        
+        siteIdTextField.text = nil
     }
 }
 
@@ -180,5 +253,17 @@ extension ViewController : ISLocationDelegate {
     
     func onLocationLost(_ lastPosition: ISPosition!) {
         print("Location lost at \(lastPosition.coordinates)")
+    }
+}
+
+extension UIViewController {
+    func hideKeyboardWhenTappedAround() {
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(UIViewController.dismissKeyboard))
+        tap.cancelsTouchesInView = false
+        view.addGestureRecognizer(tap)
+    }
+    
+    func dismissKeyboard() {
+        view.endEditing(true)
     }
 }
