@@ -97,7 +97,7 @@ class ViewController: UIViewController {
                         print("Update site succes")
                     }
                     
-                    self.startLocalisation()
+                    self.startLocation()
                     
                 }, andUpdateProgressHandler: { (packageType: ISEPackageType, download: Bool, progress: Int32, total: Int32) in
                     
@@ -110,18 +110,18 @@ class ViewController: UIViewController {
                         package = "mapdata"
                         break
                     case 3:
-                        package = "localisation"
+                        package = "location"
                         break
                     case 0:
                         break
                     default:
-                        package = "temporaire"
+                        package = "default"
                         break
                     }
                     print("Downloading package : \(package) - \(totalProgress)%")
                 })
                 
-                self.startLocalisation()
+                self.startLocation()
             } else {
                 if let errorMessage = error?.message {
                     print("Start insiteo SDK ERROR : \(errorMessage)")
@@ -131,9 +131,9 @@ class ViewController: UIViewController {
         })
     }
     
-    // MARK : Localisation
+    // MARK : Location
     
-    func startLocalisation() {
+    func startLocation() {
         
         if Insiteo.currentSite().hasPackage(ISEPackageType.location)
         && Insiteo.currentSite().hasPackage(ISEPackageType.mapData){
@@ -142,7 +142,7 @@ class ViewController: UIViewController {
         
     }
     
-    func stopLocalisation() {
+    func stopLocation() {
         ISLocationProvider.sharedInstance().stopLocation()
     }
 }
