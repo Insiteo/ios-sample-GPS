@@ -141,7 +141,7 @@ class ViewController: UIViewController {
                         package = "location"
                         break
                     default:
-                        package = "temporaire"
+                        package = "default"
                         break
                     }
                     print("Downloading package : \(package) - \(totalProgress)%")
@@ -200,7 +200,7 @@ class ViewController: UIViewController {
                 package = "location"
                 break
             default:
-                package = "temporaire"
+                package = "default"
                 break
             }
             print("Downloading package : \(package) - \(totalProgress)%")
