@@ -10,10 +10,17 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    @IBOutlet weak var locationButton: UIButton!
     @IBOutlet weak var currentSiteLabel: UILabel!
     @IBOutlet weak var longitudeLabel: UILabel!
     @IBOutlet weak var latitudeLabel: UILabel!
     @IBOutlet weak var siteIdTextField: UITextField!
+    @IBOutlet weak var mapView: UIView!
+    
+    var map : UIView!
+    var isMapView : ISMapView?
+    
+    var locationRenderer : ISLocationRenderer?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -66,8 +73,9 @@ class ViewController: UIViewController {
     
     func startInsiteoSDK() {
         
-        print("Start InstieoSDK - Start")
+        print("Starting InstieoSDK - Start")
         
+        // Get the value of key ISSite in Info.plist
         var myDict: NSDictionary?
         
         if let path = Bundle.main.path(forResource: "Info", ofType: "plist") {
@@ -81,6 +89,7 @@ class ViewController: UIViewController {
         
         currentSiteLabel.text = siteId.description
         
+        // Start SDK with siteId
         let site : ISUserSite = Insiteo.currentUser().getSiteWithSiteId(siteId)
         Insiteo.sharedInstance().start(with: site, andStartHandler: { (error: ISError?, newPackages:[Any]?) in
             
@@ -93,7 +102,8 @@ class ViewController: UIViewController {
             for (index, package) in wantedPackages.enumerated().reversed() {
 
                 if package.packageType != ISEPackageType.location
-                    && package.packageType != ISEPackageType.mapData {
+                    && package.packageType != ISEPackageType.mapData
+                    && package.packageType != ISEPackageType.tiles {
 
                     wantedPackages.remove(at: index)
 
@@ -109,7 +119,8 @@ class ViewController: UIViewController {
                         print("Update site succes")
                     }
                     
-                    self.startLocalisation()
+                    self.initMapConstraints()
+                    self.createMap()
                     
                 }, andUpdateProgressHandler: { (packageType: ISEPackageType, download: Bool, progress: Int32, total: Int32) in
                     
@@ -118,13 +129,16 @@ class ViewController: UIViewController {
                     var package: String = String();
                     
                     switch (packageType.rawValue) {
+                    case 0:
+                        break
                     case 1:
                         package = "mapdata"
                         break
+                    case 2:
+                        package = "tiles";
+                        break;
                     case 3:
-                        package = "localisation"
-                        break
-                    case 0:
+                        package = "location"
                         break
                     default:
                         package = "temporaire"
@@ -133,7 +147,8 @@ class ViewController: UIViewController {
                     print("Downloading package : \(package) - \(totalProgress)%")
                 })
                 
-                self.startLocalisation()
+                self.initMapConstraints()
+                self.createMap()
             } else {
                 if let errorMessage = error?.message {
                     print("Start insiteo SDK ERROR : \(errorMessage)")
@@ -142,7 +157,7 @@ class ViewController: UIViewController {
             
         })
         
-        print("Start InstieoSDK - End")
+        print("Starting InstieoSDK - End")
         
     }
     
@@ -165,19 +180,24 @@ class ViewController: UIViewController {
                 print("Update handler error : \(errorMessage)")
             }
             
+            self.isMapView?.resetMap()
+            
         }, andUpdateProgressHandler: { (packageType: ISEPackageType, dowload: Bool, progress: Int32, total: Int32) in
             let totalProgress: Float = (Float(progress) / Float(total)) * 100
             
             var package: String = String();
             
             switch (packageType.rawValue) {
+            case 0:
+                break
             case 1:
                 package = "mapdata"
                 break
+            case 2:
+                package = "tiles";
+                break;
             case 3:
-                package = "localisation"
-                break
-            case 0:
+                package = "location"
                 break
             default:
                 package = "temporaire"
@@ -189,21 +209,80 @@ class ViewController: UIViewController {
         currentSiteLabel.text = newSite.description
         
         print("Changing site - End")
+        self.createMap()
     }
     
-    // MARK : Localisation
+    // MARK : Map
     
-    func startLocalisation() {
+    func initMapConstraints() {
+        print("Map constraints initilization")
         
-        if Insiteo.currentSite().hasPackage(ISEPackageType.location)
-        && Insiteo.currentSite().hasPackage(ISEPackageType.mapData){
-            ISLocationProvider.sharedInstance().start(with: self)
+        self.map = UIView()
+        
+        self.mapView.addSubview(map!)
+        
+        self.map.translatesAutoresizingMaskIntoConstraints = false
+        
+        let topConstraint = NSLayoutConstraint(item: self.map, attribute: .top, relatedBy: .equal, toItem: self.mapView, attribute: .top, multiplier: 1, constant: 0)
+        self.view.addConstraint(topConstraint)
+        
+        let leftConstraint = NSLayoutConstraint(item: self.map, attribute: .left, relatedBy: .equal, toItem: self.mapView, attribute: .left, multiplier: 1, constant: 0)
+        self.view.addConstraint(leftConstraint)
+        
+        let bottomConstraint = NSLayoutConstraint(item: self.map, attribute: .bottom, relatedBy: .equal, toItem: self.mapView, attribute: .bottom, multiplier: 1, constant: 0)
+        self.view.addConstraint(bottomConstraint)
+        
+        let rightConstraint = NSLayoutConstraint(item: self.map, attribute: .right, relatedBy: .equal, toItem: self.mapView, attribute: .right, multiplier: 1, constant: 0)
+        self.view.addConstraint(rightConstraint)
+    }
+    
+    func createMap() {
+        
+        let frame: CGRect = mapView.frame
+        
+        if Insiteo.currentSite().hasPackage(ISEPackageType.mapData)
+            && Insiteo.currentSite().hasPackage(ISEPackageType.tiles) {
+            
+            if Insiteo.currentUser().renderMode == ISERenderMode.mode2D {
+                ISMap2DView.getWithFrame(frame, andMapDelegate: self, andHandler: { (map : ISMap2DView?) in
+                    
+                    self.isMapView = map
+                    
+                    self.locationRenderer = ISLocationProvider.sharedInstance().renderer
+                    self.isMapView?.add(self.locationRenderer)
+                    self.isMapView?.startRendering()
+                    
+                    self.map.addSubview(self.isMapView!)
+                    
+                })
+                
+            } else {
+                
+                print("Can't find Render Mode 2D")
+                
+            }
+            
+            print("Can't find Map Data or/and Tiles packages")
         }
         
     }
     
-    func stopLocalisation() {
+    // MARK : Location
+    
+    func startLocation() {
+        
+        if Insiteo.currentSite().hasPackage(ISEPackageType.location)
+        && Insiteo.currentSite().hasPackage(ISEPackageType.mapData){
+            
+            ISLocationProvider.sharedInstance().start(with: self)
+            self.locationButton.setTitle("Stop loc", for: UIControlState.normal)
+        }
+        
+    }
+    
+    func stopLocation() {
         ISLocationProvider.sharedInstance().stopLocation()
+        self.locationButton.setTitle("Start loc", for: UIControlState.normal)
     }
     
     // MARK : IBAction
@@ -217,6 +296,14 @@ class ViewController: UIViewController {
         }
         
         siteIdTextField.text = nil
+    }
+    
+    @IBAction func locationButtonPressed(_ sender: Any) {
+        if self.locationButton.titleLabel?.text == "Start loc" {
+            startLocation()
+        } else {
+            stopLocation()
+        }
     }
 }
 
@@ -255,6 +342,36 @@ extension ViewController : ISLocationDelegate {
         print("Location lost at \(lastPosition.coordinates)")
     }
 }
+
+// MARK : ISMapViewDelegate
+
+extension ViewController : ISMapViewDelegate {
+    
+    func onZoneClicked(with zone: ISZone!) {
+        print("onZoneClicked : \(zone.idZone)")
+    }
+    
+    func onZoomEnd(_ newZoom: Double) {
+        print("onZoomEnd")
+    }
+    
+    func onMapMoved() {
+        print("onMapMoved")
+    }
+    
+    func onMapClicked(_ touchPosition: ISPosition!) {
+        print("onMapClicked")
+    }
+    func onMapReleased() {
+        print("onMapReleased")
+    }
+    func onMapChanged(withNewMapId newMapId: Int32, andMapName mapName: String!) {
+        print("onMapChanged")
+    }
+    
+}
+
+// MARK : UIViewControler
 
 extension UIViewController {
     func hideKeyboardWhenTappedAround() {
