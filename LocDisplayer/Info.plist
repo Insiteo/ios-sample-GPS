@@ -19,7 +19,7 @@
 	<key>CFBundleVersion</key>
 	<string>1</string>
 	<key>ISApiKey</key>
-	<string>9f3c8008-8b62-40e8-9263-555d3bb21fd8</string>
+	<string>Insert your API Key</string>
 	<key>ISELocationFlag</key>
 	<array>
 		<string>ISELocationFlagGps</string>
@@ -28,11 +28,11 @@
 		<string>ISELocationFlagMems</string>
 	</array>
 	<key>ISEServerType</key>
-	<string>ISEServerTypeProd</string>
+	<string>Insert your ISEServerType</string>
 	<key>ISServerURL</key>
-	<string>https://services2.prod.insiteo.com/v3/Insiteo.Dispatch.Prod/Insiteo.Dispatch.svc/</string>
+	<string>Insert your ISServerURL</string>
 	<key>ISSite</key>
-	<integer>559</integer>
+	<integer>0</integer>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
 	<key>NSBluetoothPeripheralUsageDescription</key>
