@@ -167,6 +167,11 @@ class ViewController: UIViewController {
         
         print("Changing site - Start")
         
+        // If ISLocationProvider started, stop it
+        if ISLocationProvider.sharedInstance().isStarted {
+            self.stopLocation()
+        }
+        
         let site : ISUserSite = Insiteo.currentUser().getSiteWithSiteId(newSite)
         Insiteo.sharedInstance().startAndUpdate(with:site, andStartHandler: { (error: ISError?, tab: [Any]?) in
             
@@ -209,7 +214,6 @@ class ViewController: UIViewController {
         currentSiteLabel.text = newSite.description
         
         print("Changing site - End")
-        self.createMap()
     }
     
     // MARK : Map
