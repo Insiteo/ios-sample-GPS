@@ -152,6 +152,11 @@ class ViewController: UIViewController {
         
         print("Changing site - Start")
         
+        // If ISLocationProvider started, stop it
+        if ISLocationProvider.sharedInstance().isStarted {
+            self.stopLocation()
+        }
+        
         let site : ISUserSite = Insiteo.currentUser().getSiteWithSiteId(newSite)
         Insiteo.sharedInstance().startAndUpdate(with:site, andStartHandler: { (error: ISError?, tab: [Any]?) in
             
@@ -164,6 +169,8 @@ class ViewController: UIViewController {
             if let errorMessage = error?.message {
                 print("Update handler error : \(errorMessage)")
             }
+            
+            self.startLocation()
             
         }, andUpdateProgressHandler: { (packageType: ISEPackageType, dowload: Bool, progress: Int32, total: Int32) in
             let totalProgress: Float = (Float(progress) / Float(total)) * 100
@@ -195,6 +202,8 @@ class ViewController: UIViewController {
     
     func startLocation() {
         
+        print("Start location")
+        
         if Insiteo.currentSite().hasPackage(ISEPackageType.location)
         && Insiteo.currentSite().hasPackage(ISEPackageType.mapData){
             ISLocationProvider.sharedInstance().start(with: self)
@@ -203,6 +212,9 @@ class ViewController: UIViewController {
     }
     
     func stopLocation() {
+        
+        print("Stop location")
+        
         ISLocationProvider.sharedInstance().stopLocation()
     }
     
