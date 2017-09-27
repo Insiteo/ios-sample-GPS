@@ -7,6 +7,8 @@ We provide 2 others sample :
 - [multi-sites-without-map](https://github.com/Insiteo/ios-sample-GPS/tree/multi-sites-without-map)
 - [multi-sites-carto](https://github.com/Insiteo/ios-sample-GPS/tree/multi-sites-carto)
 
+![](https://image.ibb.co/hWVbg5/IMG_0006.png)
+
 ## Instalation
 
 You have to set the `ISApiKey` - `ISEServerType` - `ISEServerURL` - `ISSite` values in the Info.plist to use the application with your site.
