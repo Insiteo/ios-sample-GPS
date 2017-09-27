@@ -7,7 +7,9 @@ We provide 2 others sample :
 - [multi-sites-without-map](https://github.com/Insiteo/ios-sample-GPS/tree/multi-sites-without-map)
 - [multi-sites-carto](https://github.com/Insiteo/ios-sample-GPS/tree/multi-sites-carto)
 
-![](https://image.ibb.co/hWVbg5/IMG_0006.png)
+<p align="center">
+	<img src="https://image.ibb.co/hWVbg5/IMG_0006.png" width="300" style="border: 1px black solid">
+</p>
 
 ## Instalation
 
