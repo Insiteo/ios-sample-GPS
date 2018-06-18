@@ -14,6 +14,8 @@ class ViewController: UIViewController {
     @IBOutlet weak var currentSiteLabel: UILabel!
     @IBOutlet weak var longitudeLabel: UILabel!
     @IBOutlet weak var latitudeLabel: UILabel!
+    @IBOutlet weak var onEnterLabel: UILabel!
+    @IBOutlet weak var onExitLabel: UILabel!
     @IBOutlet weak var siteIdTextField: UITextField!
     @IBOutlet weak var mapView: UIView!
     
@@ -23,6 +25,9 @@ class ViewController: UIViewController {
     var insiteoIsStarted = false
     
     var locationRenderer : ISLocationRenderer?
+    
+    var onEnterCounter : Int32 = 0
+    var onExitCounter : Int32 = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -171,11 +176,17 @@ class ViewController: UIViewController {
         print("Starting InstieoSDK - End")
         insiteoIsStarted = true
         
+        // Launch ISBeaconProvider
+        ISBeaconProvider.sharedInstance().start(with: self)
+        
     }
     
     // Change site
     
     func changeSite(with newSite : Int32) {
+        
+        onEnterCounter = 0
+        onExitCounter = 0
         
         if !insiteoIsStarted {
             startInsiteoSDK(with: newSite)
@@ -391,6 +402,22 @@ extension ViewController : ISMapViewDelegate {
         print("onMapChanged")
     }
     
+}
+
+// MARK : ISBeaconDelegate
+
+extension ViewController : ISBeaconDelegate {
+    func onEnter(_ beaconRegion: ISBeaconRegion!) {
+        print("On enter beacon region")
+        onEnterCounter += 1
+        onEnterLabel.text = String(onEnterCounter)
+    }
+    
+    func onExitBeaconRegion(_ beaconRegion: ISBeaconRegion!) {
+        print("On exit beacon region")
+        onExitCounter += 1
+        onExitLabel.text = String(onExitCounter)
+    }
 }
 
 // MARK : UIViewControler
