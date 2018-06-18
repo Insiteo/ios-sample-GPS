@@ -9,7 +9,7 @@
 import UIKit
 
 class ViewController: UIViewController {
-
+    
     @IBOutlet weak var locationButton: UIButton!
     @IBOutlet weak var currentSiteLabel: UILabel!
     @IBOutlet weak var longitudeLabel: UILabel!
@@ -19,6 +19,8 @@ class ViewController: UIViewController {
     
     var map : UIView!
     var isMapView : ISMapView?
+    
+    var insiteoIsStarted = false
     
     var locationRenderer : ISLocationRenderer?
     
@@ -71,7 +73,7 @@ class ViewController: UIViewController {
         print("Init InsiteoSDK - End")
     }
     
-    func startInsiteoSDK() {
+    func startInsiteoSDK(with site: Int32 = 0) {
         
         print("Starting InstieoSDK - Start")
         
@@ -82,15 +84,24 @@ class ViewController: UIViewController {
             myDict = NSDictionary(contentsOfFile: path)
         }
         
-        guard let siteId : Int32 = myDict?.value(forKey: "ISSite") as? Int32 else {
+        guard var siteId : Int32 = myDict?.value(forKey: "ISSite") as? Int32 else {
             print("No value found for key ISSite in the .plist file.")
             return
         }
         
-        currentSiteLabel.text = siteId.description
+        currentSiteLabel.text = String(siteId)
+        
+        if site > 0 {
+            siteId = site
+            currentSiteLabel.text = String(siteId)
+        }
         
         // Start SDK with siteId
-        let site : ISUserSite = Insiteo.currentUser().getSiteWithSiteId(siteId)
+        guard let site : ISUserSite = Insiteo.currentUser().getSiteWithSiteId(siteId) else {
+            print("Site not found")
+            return
+        }
+        
         Insiteo.sharedInstance().start(with: site, andStartHandler: { (error: ISError?, newPackages:[Any]?) in
             
             guard var wantedPackages = newPackages as? [ISPackage] else {
@@ -100,13 +111,13 @@ class ViewController: UIViewController {
             
             // Remove useless packages
             for (index, package) in wantedPackages.enumerated().reversed() {
-
+                
                 if package.packageType != ISEPackageType.location
                     && package.packageType != ISEPackageType.mapData
                     && package.packageType != ISEPackageType.tiles {
-
+                    
                     wantedPackages.remove(at: index)
-
+                    
                 }
             }
             
@@ -158,12 +169,18 @@ class ViewController: UIViewController {
         })
         
         print("Starting InstieoSDK - End")
+        insiteoIsStarted = true
         
     }
     
     // Change site
     
     func changeSite(with newSite : Int32) {
+        
+        if !insiteoIsStarted {
+            startInsiteoSDK(with: newSite)
+            return
+        }
         
         print("Changing site - Start")
         
@@ -208,6 +225,7 @@ class ViewController: UIViewController {
                 package = "default"
                 break
             }
+            print("Package type : \(packageType.rawValue)")
             print("Downloading package : \(package) - \(totalProgress)%")
         })
         
@@ -242,7 +260,7 @@ class ViewController: UIViewController {
     
     func createMap() {
         
-        let frame: CGRect = mapView.frame
+        let frame : CGRect = CGRect(x: 0, y: 0, width: self.mapView.frame.size.width, height: self.mapView.frame.size.height)
         
         if Insiteo.currentSite().hasPackage(ISEPackageType.mapData)
             && Insiteo.currentSite().hasPackage(ISEPackageType.tiles) {
@@ -276,7 +294,7 @@ class ViewController: UIViewController {
     func startLocation() {
         
         if Insiteo.currentSite().hasPackage(ISEPackageType.location)
-        && Insiteo.currentSite().hasPackage(ISEPackageType.mapData){
+            && Insiteo.currentSite().hasPackage(ISEPackageType.mapData){
             
             ISLocationProvider.sharedInstance().start(with: self)
             self.locationButton.setTitle("Stop loc", for: UIControlState.normal)
@@ -388,3 +406,4 @@ extension UIViewController {
         view.endEditing(true)
     }
 }
+
