@@ -69,7 +69,11 @@ class ViewController: UIViewController {
             return
         }
         
-        let site : ISUserSite = Insiteo.currentUser().getSiteWithSiteId(siteId)
+        guard let site : ISUserSite = Insiteo.currentUser().getSiteWithSiteId(siteId) else {
+            print("Site not found")
+            return
+        }
+        
         Insiteo.sharedInstance().start(with: site, andStartHandler: { (error: ISError?, newPackages:[Any]?) in
             
             guard var wantedPackages = newPackages as? [ISPackage] else {

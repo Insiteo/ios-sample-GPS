@@ -98,7 +98,6 @@
 				5C2E55611F6A8CD500024451 /* Sources */,
 				5C2E55621F6A8CD500024451 /* Frameworks */,
 				5C2E55631F6A8CD500024451 /* Resources */,
-				8602CF9F074FFE6FB4BA22A2 /* [CP] Embed Pods Frameworks */,
 				C9D92620127ED83704923A6B /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
@@ -158,30 +157,112 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		8602CF9F074FFE6FB4BA22A2 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-LocDisplayer/Pods-LocDisplayer-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		C9D92620127ED83704923A6B /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-LocDisplayer/Pods-LocDisplayer-resources.sh",
+				"${PODS_ROOT}/InsiteoSDK/InsiteoSDK/InsiteoSDK.bundle",
+				"${PODS_ROOT}/InsiteoSDK/InsiteoSDK/glsl/FragShaderLibs/CC3LibDefaultPrecision.fsh",
+				"${PODS_ROOT}/InsiteoSDK/InsiteoSDK/glsl/FragShaderLibs/CC3LibDualSidedFragmentColor.fsh",
+				"${PODS_ROOT}/InsiteoSDK/InsiteoSDK/glsl/FragShaderLibs/CC3LibEnvironmentReflection.fsh",
+				"${PODS_ROOT}/InsiteoSDK/InsiteoSDK/glsl/FragShaderLibs/CC3LibLightProbeIllumination.fsh",
+				"${PODS_ROOT}/InsiteoSDK/InsiteoSDK/glsl/FragShaderLibs/CC3LibSetGLFragColor.fsh",
+				"${PODS_ROOT}/InsiteoSDK/InsiteoSDK/glsl/FragShaderLibs/CC3LibSetGLFragColorAlphaTest.fsh",
+				"${PODS_ROOT}/InsiteoSDK/InsiteoSDK/glsl/FragShaderLibs/CC3LibSingleSidedFragmentColor.fsh",
+				"${PODS_ROOT}/InsiteoSDK/InsiteoSDK/glsl/FragShaderLibs/CC3LibSingleTexture2D.fsh",
+				"${PODS_ROOT}/InsiteoSDK/InsiteoSDK/glsl/FragShaderLibs/CC3LibTexturableBumpMapObjectSpace.fsh",
+				"${PODS_ROOT}/InsiteoSDK/InsiteoSDK/glsl/FragShaderLibs/CC3LibTexturableBumpMapTangentSpace.fsh",
+				"${PODS_ROOT}/InsiteoSDK/InsiteoSDK/glsl/FragShaderLibs/CC3LibTexturedPointSprite.fsh",
+				"${PODS_ROOT}/InsiteoSDK/InsiteoSDK/glsl/FragShaders/CC3BumpMapObjectSpace.fsh",
+				"${PODS_ROOT}/InsiteoSDK/InsiteoSDK/glsl/FragShaders/CC3BumpMapObjectSpaceAlphaTest.fsh",
+				"${PODS_ROOT}/InsiteoSDK/InsiteoSDK/glsl/FragShaders/CC3BumpMapTangentSpace.fsh",
+				"${PODS_ROOT}/InsiteoSDK/InsiteoSDK/glsl/FragShaders/CC3BumpMapTangentSpaceAlphaTest.fsh",
+				"${PODS_ROOT}/InsiteoSDK/InsiteoSDK/glsl/FragShaders/CC3ClipSpaceNoTexture.fsh",
+				"${PODS_ROOT}/InsiteoSDK/InsiteoSDK/glsl/FragShaders/CC3ClipSpaceSingleTexture.fsh",
+				"${PODS_ROOT}/InsiteoSDK/InsiteoSDK/glsl/FragShaders/CC3Fog.fsh",
+				"${PODS_ROOT}/InsiteoSDK/InsiteoSDK/glsl/FragShaders/CC3NoTexture.fsh",
+				"${PODS_ROOT}/InsiteoSDK/InsiteoSDK/glsl/FragShaders/CC3NoTextureAlphaTest.fsh",
+				"${PODS_ROOT}/InsiteoSDK/InsiteoSDK/glsl/FragShaders/CC3NoTextureReflect.fsh",
+				"${PODS_ROOT}/InsiteoSDK/InsiteoSDK/glsl/FragShaders/CC3NoTextureReflectAlphaTest.fsh",
+				"${PODS_ROOT}/InsiteoSDK/InsiteoSDK/glsl/FragShaders/CC3PointSprites.fsh",
+				"${PODS_ROOT}/InsiteoSDK/InsiteoSDK/glsl/FragShaders/CC3PointSpritesAlphaTest.fsh",
+				"${PODS_ROOT}/InsiteoSDK/InsiteoSDK/glsl/FragShaders/CC3PureColor.fsh",
+				"${PODS_ROOT}/InsiteoSDK/InsiteoSDK/glsl/FragShaders/CC3SingleTexture.fsh",
+				"${PODS_ROOT}/InsiteoSDK/InsiteoSDK/glsl/FragShaders/CC3SingleTextureAlphaTest.fsh",
+				"${PODS_ROOT}/InsiteoSDK/InsiteoSDK/glsl/FragShaders/CC3SingleTextureReflect.fsh",
+				"${PODS_ROOT}/InsiteoSDK/InsiteoSDK/glsl/FragShaders/CC3SingleTextureReflectAlphaTest.fsh",
+				"${PODS_ROOT}/InsiteoSDK/InsiteoSDK/glsl/VertexShaderLibs/CC3LibBumpMapTangentSpaceLighting.vsh",
+				"${PODS_ROOT}/InsiteoSDK/InsiteoSDK/glsl/VertexShaderLibs/CC3LibCameraPosition.vsh",
+				"${PODS_ROOT}/InsiteoSDK/InsiteoSDK/glsl/VertexShaderLibs/CC3LibConstants.vsh",
+				"${PODS_ROOT}/InsiteoSDK/InsiteoSDK/glsl/VertexShaderLibs/CC3LibDefaultPrecision.vsh",
+				"${PODS_ROOT}/InsiteoSDK/InsiteoSDK/glsl/VertexShaderLibs/CC3LibDoubleTexture.vsh",
+				"${PODS_ROOT}/InsiteoSDK/InsiteoSDK/glsl/VertexShaderLibs/CC3LibEnvironmentReflection.vsh",
+				"${PODS_ROOT}/InsiteoSDK/InsiteoSDK/glsl/VertexShaderLibs/CC3LibIlluminatedMaterial.vsh",
+				"${PODS_ROOT}/InsiteoSDK/InsiteoSDK/glsl/VertexShaderLibs/CC3LibModelMatrices.vsh",
+				"${PODS_ROOT}/InsiteoSDK/InsiteoSDK/glsl/VertexShaderLibs/CC3LibSingleTexture.vsh",
+				"${PODS_ROOT}/InsiteoSDK/InsiteoSDK/glsl/VertexShaderLibs/CC3LibVertexPositionBones.vsh",
+				"${PODS_ROOT}/InsiteoSDK/InsiteoSDK/glsl/VertexShaderLibs/CC3LibVertexPositionNoBones.vsh",
+				"${PODS_ROOT}/InsiteoSDK/InsiteoSDK/glsl/VertexShaderLibs/CC3LibVertexPositionPointSprite.vsh",
+				"${PODS_ROOT}/InsiteoSDK/InsiteoSDK/glsl/VertexShaderLibs/CC3LibVertexPositionRigidBones.vsh",
+				"${PODS_ROOT}/InsiteoSDK/InsiteoSDK/glsl/VertexShaders/CC3ClipSpaceTexturable.vsh",
+				"${PODS_ROOT}/InsiteoSDK/InsiteoSDK/glsl/VertexShaders/CC3PointSprites.vsh",
+				"${PODS_ROOT}/InsiteoSDK/InsiteoSDK/glsl/VertexShaders/CC3Texturable.vsh",
+				"${PODS_ROOT}/InsiteoSDK/InsiteoSDK/glsl/VertexShaders/CC3TexturableBones.vsh",
+				"${PODS_ROOT}/InsiteoSDK/InsiteoSDK/glsl/VertexShaders/CC3TexturableRigidBones.vsh",
 			);
 			name = "[CP] Copy Pods Resources";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/InsiteoSDK.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/CC3LibDefaultPrecision.fsh",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/CC3LibDualSidedFragmentColor.fsh",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/CC3LibEnvironmentReflection.fsh",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/CC3LibLightProbeIllumination.fsh",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/CC3LibSetGLFragColor.fsh",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/CC3LibSetGLFragColorAlphaTest.fsh",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/CC3LibSingleSidedFragmentColor.fsh",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/CC3LibSingleTexture2D.fsh",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/CC3LibTexturableBumpMapObjectSpace.fsh",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/CC3LibTexturableBumpMapTangentSpace.fsh",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/CC3LibTexturedPointSprite.fsh",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/CC3BumpMapObjectSpace.fsh",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/CC3BumpMapObjectSpaceAlphaTest.fsh",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/CC3BumpMapTangentSpace.fsh",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/CC3BumpMapTangentSpaceAlphaTest.fsh",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/CC3ClipSpaceNoTexture.fsh",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/CC3ClipSpaceSingleTexture.fsh",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/CC3Fog.fsh",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/CC3NoTexture.fsh",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/CC3NoTextureAlphaTest.fsh",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/CC3NoTextureReflect.fsh",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/CC3NoTextureReflectAlphaTest.fsh",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/CC3PointSprites.fsh",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/CC3PointSpritesAlphaTest.fsh",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/CC3PureColor.fsh",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/CC3SingleTexture.fsh",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/CC3SingleTextureAlphaTest.fsh",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/CC3SingleTextureReflect.fsh",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/CC3SingleTextureReflectAlphaTest.fsh",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/CC3LibBumpMapTangentSpaceLighting.vsh",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/CC3LibCameraPosition.vsh",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/CC3LibConstants.vsh",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/CC3LibDefaultPrecision.vsh",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/CC3LibDoubleTexture.vsh",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/CC3LibEnvironmentReflection.vsh",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/CC3LibIlluminatedMaterial.vsh",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/CC3LibModelMatrices.vsh",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/CC3LibSingleTexture.vsh",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/CC3LibVertexPositionBones.vsh",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/CC3LibVertexPositionNoBones.vsh",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/CC3LibVertexPositionPointSprite.vsh",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/CC3LibVertexPositionRigidBones.vsh",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/CC3ClipSpaceTexturable.vsh",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/CC3PointSprites.vsh",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/CC3Texturable.vsh",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/CC3TexturableBones.vsh",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/CC3TexturableRigidBones.vsh",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -194,13 +275,16 @@
 			files = (
 			);
 			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
 			);
 			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-LocDisplayer-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
